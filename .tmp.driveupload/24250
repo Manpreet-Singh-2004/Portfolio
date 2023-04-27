@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="Keywords" content="Manpreet Singh, manpreet singh, student of Fraser Valley India, BCIS, coder">
+    <meta name="description" content="Hey, my name is Manpreet Singh and i am a student of Fraser Valley India and this website is my Portfolio">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <meta http-equiv = "refresh" content = "5; url = https://drive.google.com/drive/folders/1hfr4Oswr9-B6wcHBjo7DHtFGAAn6kTVi?usp=sharing"> -->
+    <meta name="google-site-verification" content="QIvA6VHe8sZY9PKDjhmxH4d273hjjOBG-HKrOukR2ME" />
+    <!-- for google verification -->
+
+    <title>Manpreet Singh</title>
+    <!-- gave approprite name to the title for SEO -->
+</head>
+<body>
+    <header>
+    <h1>Manpreet Singh</h1><br>
+    <!-- Here H1 has my Name, making sure that H1 us used very few times to Improve SEO -->
+    <div class="headlink">
+    <nav>
+    <ol>
+        <li> <a href="mailto: manpreet.singh18@student.ufv.ca" style="text-decoration: none; color: whitesmoke;">Mail me</a> </li>
+        <!-- <li><p> | </p></li> -->
+        <!-- <li><a href="tel: +91 6284620126" style="text-decoration: none; color: whitesmoke;" >Call me</a> </li> -->
+        <li><p> | </p></li>
+        <li><a href="https://www.linkedin.com/in/manpreetsingh18-ufv/" style="text-decoration: none; color: whitesmoke;">Linkedin</a></li>
+    </ol>
+    </nav>
+    </div>
+    </header>
+<br>
+    <div class="Projects"><fieldset><legend>
+        <h3 style="text-align: center;">Projects</h3></legend>
+    <a href="/Music Store Group Assignment/Music_store_Home.html" style="text-decoration: none; padding: 5px;">Music Store</a><br>
+    <a href="/Cyberstore/Cyberstore.html" style="text-decoration: none; padding: 5px;">Cyber store</a><br>
+    <a href="/Internship/About.html" target="_blank"style="text-decoration: none; padding: 5px;">Digital Series landing page (for internship)</a><br>
+    <a href="https://drive.google.com/drive/folders/1hfr4Oswr9-B6wcHBjo7DHtFGAAn6kTVi?usp=sharing"style="text-decoration: none; padding: 5px;">Certificates</a><br>
+    
+    </div></fieldset>
+<br>
+<br>
+    <h3 style="color: black;">About Me:</h3>
+    <hr style="border: 1px solid;">
+    <div class="me">
+        <br>
+        <p>I am a motivated BCIS student at Fraser Valley India.
+            At my core, I am a collaborative team player who is committed to building strong relationships and fostering positive working environments. I believe that 
+            success is best achieved through hard work, dedication, and a positive attitude, and I always strive to live up to these values in everything I do.</p>
+    </div>
+</body>
+</html>
