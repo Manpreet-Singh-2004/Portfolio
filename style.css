@@ -23,11 +23,26 @@ body
   background-attachment: fixed;
   /* --- */
   background-color: #D3D3D3;
-
-
-
   
 }
+/* -----test--------- */
+/* .textR {
+    padding-left: 20px;
+    padding-top: 20%;
+    float: left;
+}
+.imgme{
+    max-width: 25%;
+    max-height:15%;
+    float: left;
+}
+.me{
+    align-items: center;
+    justify-content: center;
+
+} */
+
+/* --------test-------- */
 header{
     background-color: black;
     /* color: aqua; */
@@ -67,4 +82,44 @@ nav{
     /* background-color: #D9AFD9;
     background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); */
     /* color: aqua; */
+}
+footer{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.fa{
+    color: black;
+    padding: 20px;
+    font-size: 50px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background-color:#D3D3D3;
+    transition-duration: 1s;    
+}
+/* .fa-instagram{
+    transition-duration: 1s;
+    background-color:#D3D3D3; */
+/* } */
+.fa-instagram:hover{
+    transition-duration: 1s;
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );    
+    /* insta background */
+    color: #D3D3D3;
+}
+.fa-linkedin:hover{
+    background-color: #0072b1;
+    color: #D3D3D3;
+}
+.fa-github:hover{
+    background-color: white;
 }
