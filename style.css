@@ -118,11 +118,14 @@ footer{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );    
     /* insta background */
     color: #D3D3D3;
+    border-radius: 15px;
 }
 .fa-linkedin:hover{
     background-color: #0072b1;
     color: #D3D3D3;
+    border-radius: 15px;
 }
 .fa-github:hover{
     background-color: white;
+    border-radius: 15px;
 }
