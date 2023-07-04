@@ -35,16 +35,35 @@ h3{
     padding-top: 20%;
     float: left;
 }
-.imgme{
-    max-width: 25%;
-    max-height:15%;
-    float: left;
-}
+
 .me{
     align-items: center;
     justify-content: center;
 
 } */
+
+/* Images */
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media query for phones */
+  @media (max-width: 767px) {
+    .image {
+      padding: 10px; 
+    }
+  }
+  
+  /* Media query for laptops and larger screens */
+  @media (min-width: 768px) {
+    .image {
+      padding: 20px; 
+    }
+  }
 
 /* --------test-------- */
 header{
