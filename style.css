@@ -78,7 +78,8 @@ header{
     text-align: right;
     color: whitesmoke;
 }
-nav{
+/* org */
+/* nav{
     text-align: right;
   }
   
@@ -91,7 +92,61 @@ nav{
     nav ol li {
       display: inline-block;
       margin-right: 20px;
-    }
+    } */
+/* org */
+
+
+/* test */
+        nav {
+            text-align: right;
+        }
+
+        nav ol {
+            list-style-type: none;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        nav ol li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav li {
+            list-style-type: none;
+        }
+        .nav li:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .nav li p {
+            margin: 0;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        @media all and (max-width: 720px) {
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav li:not(:last-child) {
+                margin-right: 5px;
+                margin-bottom: 10px;
+            }
+        }
+/* test */
+
 .projects{
     border-style: solid;
     border-width: 2px;
