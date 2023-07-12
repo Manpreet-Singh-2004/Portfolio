@@ -237,14 +237,14 @@ header{
   
   @media all and (max-width: 480px) {
     .carimg {
-      width: 70%;   /*  <--------------------------- */
-      height: auto;
+      width: 100%;   /*  <--------------------------- */
+      height: 100%;
       padding: 0;
     }
   
     .carimg img {
-      width: 70%;  /* <----------------------------- */
-      height: auto;
+      width: 100%;  /* <----------------------------- */
+      height: 100%;
       object-fit: contain;
     }
   }
