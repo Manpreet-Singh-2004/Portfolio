@@ -75,7 +75,6 @@ header{
     margin-left: 30px; */
 }
 .headlink{
-    text-align: right;
     color: whitesmoke;
 }
 /* org */
@@ -97,30 +96,16 @@ header{
 
 
 /* test */
-        nav {
-            text-align: right;
-        }
-
-        nav ol {
-            list-style-type: none;
-            margin: 5px;
-            padding: 5px;
-        }
-
-        nav ol li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
         .nav {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
         }
 
         .nav li {
             list-style-type: none;
         }
+
         .nav li:not(:last-child) {
             margin-right: 10px;
         }
@@ -134,6 +119,11 @@ header{
             color: whitesmoke;
         }
 
+        .device-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
         @media all and (max-width: 720px) {
             .nav {
                 flex-wrap: wrap;
@@ -143,6 +133,19 @@ header{
             .nav li:not(:last-child) {
                 margin-right: 5px;
                 margin-bottom: 10px;
+            }
+
+            .device-icon {
+                display: none;
+            }
+        }
+
+        @media all and (max-device-width: 720px) {
+            .device-icon {
+                display: inline-block;
+                font-size: 20px;
+                margin-right: 5px;
+                content: "\1F4F1";
             }
         }
 /* test */
