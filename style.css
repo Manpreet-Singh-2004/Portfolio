@@ -218,7 +218,7 @@ header{
   }
   
   /* ----------------------- */
-  .img {
+  .carimg {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -227,7 +227,7 @@ header{
     margin: 0 auto;
   }
   
-  img {
+  .carimg img {
     max-width: 100%;
     max-height: 100%;
     align-items: center;
@@ -236,19 +236,19 @@ header{
   }
   
   @media all and (max-width: 480px) {
-    .img {
+    .carimg {
       width: 100%;
       height: auto;
       padding: 0;
     }
   
-    img {
+    .carimg img {
       width: 100%;
       height: auto;
       object-fit: contain;
     }
   }
-/* --------------------------------- */
+/* -----------Caro-END---------------------- */
 
 footer{
     background-color: black;
