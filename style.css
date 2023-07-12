@@ -95,62 +95,99 @@ header{
 
 
 /* test */
-        .nav {
-            display: flex;
-            justify-content: center; /* Center the navigation bar */
-            align-items: center;
-        }
+.nav {
+    display: flex;
+    justify-content: center; /* Center the navigation bar */
+    align-items: center;
+}
 
-        .nav li {
-            list-style-type: none;
-        }
+.nav li {
+    list-style-type: none;
+}
 
-        .nav li:not(:last-child) {
-            margin-right: 10px;
-        }
+.nav li:not(:last-child) {
+    margin-right: 10px;
+}
 
-        .nav li p {
-            margin: 0;
-        }
+.nav li p {
+    margin: 0;
+}
 
-        .nav a {
-            text-decoration: none;
-            color: whitesmoke;
-        }
+.nav a {
+    text-decoration: none;
+    color: whitesmoke;
+}
 
-        .device-icon {
-            font-size: 20px;
-            margin-right: 5px;
-        }
+.device-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
 
-        @media all and (max-width: 720px) {
-            .nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+@media all and (max-width: 720px) {
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-            .nav li:not(:last-child) {
-                margin-right: 5px;
-                margin-bottom: 10px;
-            }
+    .nav li:not(:last-child) {
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
 
-            .device-icon {
-                display: none;
-            }
-        }
+    .device-icon {
+        display: none;
+    }
+}
 
-        @media all and (max-device-width: 720px) {
-            .nav {
-                justify-content: flex-start; /* Align navigation bar to the left for mobile devices */
-            }
+@media all and (max-device-width: 720px) {
+    .nav {
+        justify-content: flex-start; /* Align navigation bar to the left for mobile devices */
+    }
 
-            .device-icon {
-                display: inline-block;
-                font-size: 20px;
-                margin-right: 5px;
-                content: "\1F4F1";
-            }
-        }
+    .device-icon {
+        display: inline-block;
+        font-size: 20px;
+        margin-right: 5px;
+        content: "\1F4F1";
+    }
+}
+/* ---------- */
+.device-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.device-icon .laptop-icon {
+    display: none; /* Hide laptop icon by default */
+    font-size: 20px;
+}
+
+.device-icon .mobile-icon {
+    font-size: 20px;
+}
+
+@media all and (max-width: 480px) {
+    .device-icon .laptop-icon {
+        display: none; /* Hide laptop icon on mobile devices */
+    }
+
+    .device-icon .mobile-icon {
+        display: inline-block; /* Show mobile icon on mobile devices */
+    }
+}
+
+@media all and (min-width: 481px) {
+    .device-icon .laptop-icon {
+        display: inline-block; /* Show laptop icon on laptop/desktop devices */
+    }
+
+    .device-icon .mobile-icon {
+        display: none; /* Hide mobile icon on laptop/desktop devices */
+    }
+}
+
 /* test */
 
 .projects{
