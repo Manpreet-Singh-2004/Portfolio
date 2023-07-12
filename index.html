@@ -151,7 +151,55 @@
         <br>
         <!-- Carsouel -->
 
-        <div class="carousel">
+        <style>
+            #demo {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+            }
+            
+            .carousel {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 15px;
+            }
+            
+            /* ----------------------- */
+            .img {
+              align-items: center;
+              display: flex;
+              justify-content: center;
+              width: 920px;
+              height: 600px;
+              margin: 0 auto;
+            }
+            
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+            }
+            
+            @media all and (max-width: 480px) {
+              .img {
+                width: 100%;
+                height: auto;
+                padding: 0;
+              }
+            
+              img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+              }
+            }
+          </style>
+          
+          <div class="carousel">
             <!-- Carousel -->
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
           
@@ -209,7 +257,7 @@
               </button>
             </div>
           </div>
-          
+
           <!-- Carsouel End -->
           <br>
         <p>
