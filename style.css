@@ -30,40 +30,37 @@ h3{
     padding: 5px;
 }
 /* -----test--------- */
-/* .textR {
-    padding-left: 20px;
-    padding-top: 20%;
-    float: left;
-}
 
-.me{
-    align-items: center;
-    justify-content: center;
-
-} */
 
 /* Images */
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Media query for phones */
-  @media (max-width: 767px) {
-    .image {
-      padding: 10px; 
-    }
-  }
-  
-  /* Media query for laptops and larger screens */
-  @media (min-width: 768px) {
-    .image {
-      padding: 20px; 
-    }
-  }
+        
+      .img {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: 920px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        @media all and (max-width: 720px) {
+            .img {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
+
+            .img img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
 
 /* --------test-------- */
 header{
