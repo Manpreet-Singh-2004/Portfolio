@@ -216,6 +216,8 @@ header{
     align-items: center;
     padding: 15px;
     margin: -25px;
+    margin-top: -15px;
+    margin-bottom: -15px;
   }
   
   /* ----------------------- */
