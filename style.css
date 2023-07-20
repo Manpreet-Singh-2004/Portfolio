@@ -120,19 +120,7 @@ header{
     text-decoration: none;
     color: whitesmoke;
 }
-/* Media Query for max-width 480px */
-@media screen and (max-width: 480px) {
-    .nav {
-        flex-wrap: wrap; /* Allow items to wrap to a new line */
-        justify-content: flex-start; /* Start from the left */
-    }
-    .nav p {
-        display: none; /* Hide the pipe separator */
-    }
-    .nav a {
-        margin-right: 10px; /* Add some spacing between links */
-    }
-}
+
 
 /* ------------------------ */
 
@@ -141,7 +129,7 @@ header{
     margin-right: 5px;
 }
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 480px) {
     .nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -157,7 +145,7 @@ header{
     }
 }
 
-@media all and (max-device-width: 720px) {
+@media all and (max-device-width: 480px) {
     .nav {
         justify-content: flex-start; /* Align navigation bar to the left for mobile devices */
     }
