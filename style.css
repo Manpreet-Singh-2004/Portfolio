@@ -100,7 +100,8 @@ header{
     justify-content: center; /* Center the navigation bar */
     align-items: center;
     /* ---------- */
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .nav li {
