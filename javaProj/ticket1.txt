@@ -1,0 +1,264 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+abstract class ticket1 {
+    abstract void q();
+}
+class hlo extends ticket1 implements ActionListener{
+    JFrame timing_frame =new JFrame();
+    JFrame homepage_frame =new JFrame();
+    String selected_city;
+    JLabel movie1_label,movie2_label,movie3_label,l2,l3,l4;
+    JRadioButton r1,r2,r3;
+    JButton b1,b2,b3,timing_1,timing_2,timing_3,timing_4,next,b9, movie1_button, movie2_button,movie3_button;
+    String[] City = {"Select Your City","Chandigarh", "Mohali", "Patiala","Panchkula","Rajpura"};
+    JComboBox<String> cities = new JComboBox<>(City);
+    ButtonGroup g;
+    Font font1=new Font(" ",Font.BOLD,22);
+    Font font2=new Font(" ",Font.ITALIC,16);
+    ImageIcon image=new ImageIcon("icon.jpg");
+    ImageIcon tiger3image=new ImageIcon("Tiger3.png");
+    ImageIcon HGimage=new ImageIcon("HungerGames.png");
+    ImageIcon Failimage=new ImageIcon("12thFail.png");
+    @Override
+    void q() {
+        //homepage frame
+        homepage_frame.setVisible(true);
+        homepage_frame.setSize(1920,1080);
+        homepage_frame.setLayout(null);
+        homepage_frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        homepage_frame.setTitle("Home Page");
+        homepage_frame.setIconImage(image.getImage());
+        homepage_frame.getContentPane().setBackground(new Color(21, 21, 21));
+
+        movie1_button =new JButton(tiger3image);
+        movie1_button.setBounds(50,150,400,660);
+        movie1_button.addActionListener(this);
+        movie2_button =new JButton(HGimage);
+        movie2_button.setBounds(575,150,400,660);
+        movie2_button.addActionListener(this);
+        movie3_button=new JButton(Failimage);
+        movie3_button.setBounds(1100,150,400,660);
+        movie3_button.addActionListener(this);
+
+        homepage_frame.add(movie1_button);
+        homepage_frame.add(movie2_button);
+        homepage_frame.add(movie3_button);
+
+
+        //timing frame
+        timing_frame.setSize(450,650);
+        timing_frame.setLayout(null);
+        timing_frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        timing_frame.setTitle("Timings");
+        timing_frame.setIconImage(image.getImage());
+        timing_frame.getContentPane().setBackground(new Color(248, 143, 143));
+
+        movie1_label =new JLabel("TIGER 3-HINDI");
+        movie1_label.setBounds(10,30,350,30);
+        movie1_label.setFont(font1);
+        movie2_label =new JLabel("THE HUNGER GAMES-ENGLISH");
+        movie2_label.setBounds(10,30,350,30);
+        movie2_label.setFont(font1);
+        movie3_label =new JLabel("12TH FAIL-HINDI");
+        movie3_label.setBounds(10,30,350,30);
+        movie3_label.setFont(font1);
+
+        cities.setBounds(30,80,120,30);
+        cities.addActionListener(this::errors);
+
+        l3=new JLabel("Select Cinema for the show");
+        l3.setFont(font2);
+        l3.setBounds(10,125,250,50);
+        r1=new JRadioButton("X Cinema");
+        r1.setBackground(new Color(248, 143, 143));
+        r1.setBounds(10,170,120,50);
+        r1.addActionListener(this);
+        r2=new JRadioButton("Y Cinema");
+        r2.setBackground(new Color(248, 143, 143));
+        r2.setBounds(127,170,120,50);
+        r2.addActionListener(this);
+        r3=new JRadioButton("Z Cinema");
+        r3.setBackground(new Color(248, 143, 143));
+        r3.setBounds(243,170,120,50);
+        r3.addActionListener(this);
+        g=new ButtonGroup();
+        g.add(r1);
+        g.add(r2);
+        g.add(r3);
+
+        l2=new JLabel("Select Day for the Show");
+        l2.setBounds(10,235,190,50);
+        l2.setFont(font2);
+        b1=new JButton("Today");
+        b1.setBounds(10,280,70,30);
+        b1.addActionListener(this);
+        b2=new JButton("Tomorrow");
+        b2.setBounds(90,280,100,30);
+        b2.addActionListener(this);
+        b3=new JButton("Day After Tomorrow");
+        b3.setBounds(200,280,160,30);
+        b3.addActionListener(this);
+
+        l4=new JLabel("Select Timing for the Show");
+        l4.setBounds(10,345,210,50);
+        l4.setFont(font2);
+        timing_1=new JButton("11:00 AM");
+        timing_1.setBounds(10,390,100,30);
+        timing_1.addActionListener(this);
+        timing_2=new JButton("3:00 PM");
+        timing_2.setBounds(130,390,100,30);
+        timing_2.addActionListener(this);
+        timing_3=new JButton("7:00 PM");
+        timing_3.setBounds(10,430,100,30);
+        timing_3.addActionListener(this);
+        timing_4=new JButton("10:30 PM");
+        timing_4.setBounds(130,430,100,30);
+        timing_4.addActionListener(this);
+
+        next=new JButton("Next");
+        next.setBounds(80,490,80,40);
+        next.addActionListener(this::errors);
+        b9=new JButton("Previous");
+        b9.setBounds(180,490,100,40);
+        b9.addActionListener(this);
+
+
+
+        timing_frame.add(r1);
+        timing_frame.add(r2);
+        timing_frame.add(r3);
+        timing_frame.add(cities);
+        timing_frame.add(l3);
+        timing_frame.add(l4);
+        timing_frame.add(timing_1);
+        timing_frame.add(timing_2);
+        timing_frame.add(timing_3);
+        timing_frame.add(timing_4);
+        timing_frame.add(next);
+        timing_frame.add(b9);
+        timing_frame.add(l2);
+        timing_frame.add(b1);
+        timing_frame.add(b2);
+        timing_frame.add(b3);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+//        Image Poster 1 | Tiger3
+        if (e.getSource()== movie1_button)
+        {
+            timing_frame.setVisible(true);
+            homepage_frame.setVisible(false);
+            timing_frame.add(movie1_label);
+            movie2_label.setVisible(false);
+            movie3_label.setVisible(false);
+        }
+//        Image Poster 2 | Hunger games
+        else if (e.getSource()== movie2_button)
+        {
+            timing_frame.setVisible(true);
+            homepage_frame.setVisible(false);
+            timing_frame.add(movie2_label);
+            movie1_label.setVisible(false);
+            movie3_label.setVisible(false);
+        }
+//        Image poster 3 | 12th Fail
+        else if (e.getSource()==movie3_button)
+        {
+            timing_frame.setVisible(true);
+            homepage_frame.setVisible(false);
+            timing_frame.add(movie3_label);
+            movie2_label.setVisible(false);
+            movie1_label.setVisible(false);
+        }
+//        Show Timing | Previous Button
+         else if (e.getSource()==b9)
+        {
+            timing_frame.dispose();
+            homepage_frame.setVisible(true);
+        }
+//         Timing | Today
+        else if (e.getSource()==b1)
+        {
+            b1.setBackground(Color.gray);
+            b2.setBackground(UIManager.getColor("Button.background"));
+            b3.setBackground(UIManager.getColor("Button.background"));
+        }
+//        Tommorow
+        else if (e.getSource()==b2)
+        {
+            b2.setBackground(Color.gray);
+            b1.setBackground(UIManager.getColor("Button.background"));
+            b3.setBackground(UIManager.getColor("Button.background"));
+        }
+//        Day After tommorow
+        else if(e.getSource()==b3)
+        {
+            b3.setBackground(Color.gray);
+            b1.setBackground(UIManager.getColor("Button.background"));
+            b2.setBackground(UIManager.getColor("Button.background"));
+
+        }
+        else if (e.getSource()==timing_1)
+        {
+            timing_1.setBackground(Color.gray);
+            timing_2.setBackground(UIManager.getColor("Button.background"));
+            timing_3.setBackground(UIManager.getColor("Button.background"));
+            timing_4.setBackground(UIManager.getColor("Button.background"));
+        }
+        else if (e.getSource()==timing_2)
+        {
+            timing_2.setBackground(Color.gray);
+            timing_1.setBackground(UIManager.getColor("Button.background"));
+            timing_3.setBackground(UIManager.getColor("Button.background"));
+            timing_4.setBackground(UIManager.getColor("Button.background"));
+        }
+        else if (e.getSource()==timing_3)
+        {
+            timing_3.setBackground(Color.gray);
+            timing_2.setBackground(UIManager.getColor("Button.background"));
+            timing_1.setBackground(UIManager.getColor("Button.background"));
+            timing_4.setBackground(UIManager.getColor("Button.background"));
+        }
+        else if (e.getSource()==timing_4)
+        {
+            timing_4.setBackground(Color.gray);
+            timing_2.setBackground(UIManager.getColor("Button.background"));
+            timing_3.setBackground(UIManager.getColor("Button.background"));
+            timing_1.setBackground(UIManager.getColor("Button.background"));
+        }
+    }
+    public void errors(ActionEvent e) {
+        if (e.getSource()== next)
+        {
+            selected_city=(String) cities.getSelectedItem();
+            if (selected_city.equals("Select Your City"))
+            {
+                JOptionPane.showMessageDialog(timing_frame, "Please Select your City",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            if (!r1.isSelected() && !r2.isSelected() && !r3.isSelected())
+            {
+                JOptionPane.showMessageDialog(timing_frame, "Please Select Cinema for the show",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+//            if (b1.setEnabled() && b2.setEnabled() && b3.setEnabled())
+//            {
+//                JOptionPane.showMessageDialog(timing_frame, "Please Day for the show",
+//                        "Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//            if (!timing_1.isSelected() && !timing_2.isSelected() && !timing_3.isSelected() && !timing_4.isSelected())
+//            {
+//                JOptionPane.showMessageDialog(timing_frame, "Please Select Timing for the show",
+//                        "Error", JOptionPane.ERROR_MESSAGE);
+//            }
+            
+        }
+    }
+
+    public static void main(String[] args) {
+        hlo a=new hlo();
+        a.q();
+    }
+}

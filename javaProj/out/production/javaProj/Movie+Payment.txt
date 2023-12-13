@@ -1,0 +1,411 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Vaishnavi_Total {
+
+    static class Tickets extends JFrame implements ActionListener{
+        JPanel silver = new JPanel();
+        JPanel Gold = new JPanel();
+        JPanel Platinum = new JPanel();
+
+        JButton S1 = new JButton("S1");
+        JButton S2 = new JButton("S2");
+        JButton S3 = new JButton("S3");
+        JButton S4 = new JButton("S4");
+        JButton S5 = new JButton("S5");
+        JButton S6 = new JButton("S6");
+        JButton S7 = new JButton("S7");
+        JButton S8 = new JButton("S8");
+
+        JButton G1 = new JButton("G1");
+        JButton G2 = new JButton("G2");
+        JButton G3 = new JButton("G3");
+        JButton G4 = new JButton("G4");
+        JButton G5 = new JButton("G5");
+        JButton G6 = new JButton("G6");
+        JButton G7 = new JButton("G7");
+        JButton G8 = new JButton("G8");
+
+        JButton P1 = new JButton("P1");
+        JButton P2 = new JButton("P2");
+        JButton P3 = new JButton("P3");
+        JButton P4 = new JButton("P4");
+        JButton P5 = new JButton("P5");
+        JButton P6 = new JButton("P6");
+        JButton P7 = new JButton("P7");
+        JButton P8 = new JButton("P8");
+
+
+        JButton Reset = new JButton("Reset");
+        JButton Confirm = new JButton("Confirm");
+        JTextField selectedSeats = new JTextField();
+
+        JPanel Screen = new JPanel();
+        JLabel ScreenText = new JLabel("Screen");
+        JLabel seats = new JLabel();
+
+        String selected;
+        int totalPrice;
+
+        JFrame Payment_Portal = new JFrame("Payment Portal");
+        JTextField Total_Price = new JTextField();
+        Font font1 = new Font("",Font.BOLD,30);
+        JButton UPI = new JButton("UPI");
+        JButton Card = new JButton("Card");
+        JButton Cash = new JButton("Cash");
+        JButton Next = new JButton("Next");
+        JLabel Status = new JLabel();
+
+        Tickets(){
+            this.setLayout(null);
+            this.setSize(700,550);
+            this.setVisible(true);
+            this.getContentPane().setBackground(Color.WHITE);
+            S1.setBounds(60,30,50,50);
+            S2.setBounds(120,30,50,50);
+            S3.setBounds(180,30,50,50);
+            S4.setBounds(240,30,50,50);
+            S5.setBounds(300,30,50,50);
+            S6.setBounds(360,30,50,50);
+            S7.setBounds(420,30,50,50);
+            S8.setBounds(480,30,50,50);
+
+            G1.setBounds(60,30,50,50);
+            G2.setBounds(120,30,50,50);
+            G3.setBounds(180,30,50,50);
+            G4.setBounds(240,30,50,50);
+            G5.setBounds(300,30,50,50);
+            G6.setBounds(360,30,50,50);
+            G7.setBounds(420,30,50,50);
+            G8.setBounds(480,30,50,50);
+
+            P1.setBounds(60, 30, 50, 50);
+            P2.setBounds(120, 30, 50, 50);
+            P3.setBounds(180, 30, 50, 50);
+            P4.setBounds(240, 30, 50, 50);
+            P5.setBounds(300, 30, 50, 50);
+            P6.setBounds(360, 30, 50, 50);
+            P7.setBounds(420, 30, 50, 50);
+            P8.setBounds(480, 30, 50, 50);
+
+            ScreenText.setForeground(Color.WHITE);
+            Screen.add(ScreenText);
+            Screen.setBackground(new Color(0, 162, 35, 255));
+            Screen.setBounds(90,10,500,30);
+
+            Reset.setBounds(40,400,90,40);
+            selectedSeats.setBounds(180,400,320,40);
+            selectedSeats.setEditable(false);
+            Confirm.setBounds(550,400,90,40);
+            Confirm.addActionListener(this::Confirm);
+
+
+            seats.setBounds(180,450,320,60);
+            seats.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            seats.setHorizontalAlignment(JLabel.CENTER);
+            seats.setVerticalAlignment(JLabel.CENTER);
+
+            silver.setBackground(new Color(80, 85, 89));
+            silver.setLayout(null);
+            silver.setBounds(40,40,600,100);
+            S1.addActionListener(this);
+            S2.addActionListener(this);
+            S3.addActionListener(this);
+            S4.addActionListener(this);
+            S5.addActionListener(this);
+            S6.addActionListener(this);
+            S7.addActionListener(this);
+            S8.addActionListener(this);
+            G1.addActionListener(this);
+            G2.addActionListener(this);
+            G3.addActionListener(this);
+            G4.addActionListener(this);
+            G5.addActionListener(this);
+            G6.addActionListener(this);
+            G7.addActionListener(this);
+            G8.addActionListener(this);
+            P1.addActionListener(this);
+            P2.addActionListener(this);
+            P3.addActionListener(this);
+            P4.addActionListener(this);
+            P5.addActionListener(this);
+            P6.addActionListener(this);
+            P7.addActionListener(this);
+            P8.addActionListener(this);
+
+            Reset.addActionListener(this::ResetButton);
+            silver.add(S1);
+            silver.add(S2);
+            silver.add(S3);
+            silver.add(S4);
+            silver.add(S5);
+            silver.add(S6);
+            silver.add(S7);
+            silver.add(S8);
+
+            Gold.setBackground(new Color(245, 221, 98));
+            Gold.setLayout(null);
+            Gold.setBounds(40,160,600,100);
+            Gold.add(G1);
+            Gold.add(G2);
+            Gold.add(G3);
+            Gold.add(G4);
+            Gold.add(G5);
+            Gold.add(G6);
+            Gold.add(G7);
+            Gold.add(G8);
+
+            Platinum.setBackground(new Color(183, 183, 183));
+            Platinum.setLayout(null);
+            Platinum.setBounds(40,280,600,100);
+            Platinum.add(P1);
+            Platinum.add(P2);
+            Platinum.add(P3);
+            Platinum.add(P4);
+            Platinum.add(P5);
+            Platinum.add(P6);
+            Platinum.add(P7);
+            Platinum.add(P8);
+
+            this.add(silver);
+            this.add(Gold);
+            this.add(Platinum);
+            this.add(Reset);
+            this.add(selectedSeats);
+            this.add(Confirm);
+            this.add(Screen);
+            this.add(seats);
+            this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+
+
+            //Payment Portal Frame
+            Payment_Portal.setSize(500,500);
+            Payment_Portal.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            Payment_Portal.setLayout(null);
+            Total_Price.setBounds(10,50,470,70);
+            UPI.setBounds(10,200,200,80);
+            Card.setBounds(260,200,200,80);
+            Cash.setBounds(10,300,200,80);
+            Next.setBounds(260,300,200,80);
+            Status.setBounds(200,400,200,60);
+            Total_Price.setFont(font1);
+            Total_Price.setEditable(false);
+            UPI.addActionListener(this::PaymentButtons);
+            Card.addActionListener(this::PaymentButtons);
+            Cash.addActionListener(this::PaymentButtons);
+
+
+
+
+            Payment_Portal.add(Total_Price);
+            Payment_Portal.add(UPI);
+            Payment_Portal.add(Card);
+            Payment_Portal.add(Cash);
+            Payment_Portal.add(Next);
+            Payment_Portal.add(Status);
+
+
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == S1) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S1");
+                S1.setEnabled(false);
+            }
+            else if (e.getSource() == S2) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S2");
+                S2.setEnabled(false);
+            }
+            else if (e.getSource() == S3) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S3");
+                S3.setEnabled(false);
+            }
+            else if (e.getSource() == S4) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S4");
+                S4.setEnabled(false);
+            }
+            else if (e.getSource() == S5) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S5");
+                S5.setEnabled(false);
+            }
+            else if (e.getSource() == S6) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S6");
+                S6.setEnabled(false);
+            }
+            else if (e.getSource() == S7) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S7");
+                S7.setEnabled(false);
+            }
+            else if (e.getSource() == S8) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected+" "+"S8");
+                S8.setEnabled(false);
+            }
+            else if (e.getSource() == G1) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G1");
+                G1.setEnabled(false);
+            } else if (e.getSource() == G2) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G2");
+                G2.setEnabled(false);
+            } else if (e.getSource() == G3) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G3");
+                G3.setEnabled(false);
+            } else if (e.getSource() == G4) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G4");
+                G4.setEnabled(false);
+            } else if (e.getSource() == G5) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G5");
+                G5.setEnabled(false);
+            } else if (e.getSource() == G6) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G6");
+                G6.setEnabled(false);
+            } else if (e.getSource() == G7) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G7");
+                G7.setEnabled(false);
+            } else if (e.getSource() == G8) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "G8");
+                G8.setEnabled(false);
+            }
+            else if (e.getSource() == P1) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P1");
+                P1.setEnabled(false);
+            } else if (e.getSource() == P2) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P2");
+                P2.setEnabled(false);
+            } else if (e.getSource() == P3) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P3");
+                P3.setEnabled(false);
+            } else if (e.getSource() == P4) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P4");
+                P4.setEnabled(false);
+            } else if (e.getSource() == P5) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P5");
+                P5.setEnabled(false);
+            } else if (e.getSource() == P6) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P6");
+                P6.setEnabled(false);
+            } else if (e.getSource() == P7) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P7");
+                P7.setEnabled(false);
+            } else if (e.getSource() == P8) {
+                selected = selectedSeats.getText();
+                selectedSeats.setText(selected + " " + "P8");
+                P8.setEnabled(false);
+            }
+
+        }
+
+        public void ResetButton(ActionEvent e){
+
+            if (e.getSource()==Reset){
+                selectedSeats.setText(null);
+                S1.setEnabled(true);
+                S2.setEnabled(true);
+                S3.setEnabled(true);
+                S4.setEnabled(true);
+                S5.setEnabled(true);
+                S6.setEnabled(true);
+                S7.setEnabled(true);
+                S8.setEnabled(true);
+                G1.setEnabled(true);
+                G2.setEnabled(true);
+                G3.setEnabled(true);
+                G4.setEnabled(true);
+                G5.setEnabled(true);
+                G6.setEnabled(true);
+                G7.setEnabled(true);
+                G8.setEnabled(true);
+                P1.setEnabled(true);
+                P2.setEnabled(true);
+                P3.setEnabled(true);
+                P4.setEnabled(true);
+                P5.setEnabled(true);
+                P6.setEnabled(true);
+                P7.setEnabled(true);
+                P8.setEnabled(true);
+                seats.setText(null);
+            }
+        }
+        public void Confirm(ActionEvent e) {
+            if (selectedSeats.getText().equals("")) {
+                JOptionPane.showMessageDialog(this, "Please Select a Seat !!!",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String[] selectedSeatsArray = selectedSeats.getText().trim().split(" ");
+                int totalSeats = selectedSeatsArray.length;
+
+                int silverPrice = 10; // Set the price for silver panel
+                int goldPrice = 15;   // Set the price for gold panel
+                int platinumPrice = 20; // Set the price for platinum panel
+
+                totalPrice = 0;
+
+                for (String seat : selectedSeatsArray) {
+                    if (seat.startsWith("S")) {
+                        totalPrice += silverPrice;
+                    } else if (seat.startsWith("G")) {
+                        totalPrice += goldPrice;
+                    } else if (seat.startsWith("P")) {
+                        totalPrice += platinumPrice;
+                    }
+                }
+                Payment_Portal.setVisible(true);
+                Total_Price.setText("$"+totalPrice);
+                Next.setEnabled(false);
+                seats.setText("Total Number of Seats: " + (totalSeats));
+
+
+
+//                int option = JOptionPane.showConfirmDialog(this,"Pay: $" + totalPrice, "Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+//                if(option == JOptionPane.YES_OPTION){
+//                    JOptionPane.showMessageDialog(this, "Paid:  $"+ totalPrice);
+//                }
+            }
+        }
+
+        public void PaymentButtons (ActionEvent e) {
+            if (e.getSource() == UPI || e.getSource() == Card || e.getSource() == Cash) {
+                int option = JOptionPane.showConfirmDialog(this, "Pay: $" + totalPrice, "Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+                if (option == JOptionPane.YES_OPTION) {
+                    JOptionPane.showMessageDialog(this, "Paid:  $" + totalPrice);
+                    UPI.setEnabled(false);
+                    Card.setEnabled(false);
+                    Cash.setEnabled(false);
+                    Next.setEnabled(true);
+                    Status.setFont(font1);
+                    Status.setForeground(new Color(55, 141, 33));
+                    Status.setText("Paid");
+                }
+
+            }
+        }
+        public static void main(String[] args) {
+            Tickets t1 = new Tickets();
+        }
+    }
+}

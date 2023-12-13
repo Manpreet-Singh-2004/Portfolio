@@ -1,0 +1,178 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+abstract class ticket1 {
+    abstract void q();
+}
+class hlo extends ticket1 implements ActionListener{
+    JFrame f =new JFrame();
+    JFrame hf =new JFrame();
+    JLabel l1,l2,l3,l4;
+    JRadioButton r1,r2,r3;
+    JButton b1,b2,b3,b4,b5,b6,b7,hb1,hb2,hb3;
+    String[] City = {"Select Your City","Chandigarh", "Mohali", "Patiala","Panchkula","Rajpura"};
+    JComboBox<String> Citylist = new JComboBox<>(City);
+    ButtonGroup g;
+    Font font1=new Font(" ",Font.BOLD,22);
+    Font font2=new Font(" ",Font.ITALIC,16);
+    ImageIcon image=new ImageIcon("icon.jpg");
+    ImageIcon tiger3image=new ImageIcon("Tiger3.png");
+    ImageIcon HGimage=new ImageIcon("HungerGames.png");
+    ImageIcon Failimage=new ImageIcon("12thFail.png");
+    @Override
+    void q() {
+        //homepage frame
+        hf.setVisible(true);
+        hf.setSize(1920,1080);
+        hf.setLayout(null);
+        hf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        hf.setTitle("HOME PAGE");
+        hf.setIconImage(image.getImage());
+        hf.getContentPane().setBackground(new Color(21, 21, 21));
+
+        hb1=new JButton(tiger3image);
+        hb1.setBounds(50,150,400,660);
+        hb1.addActionListener(this);
+        hb2=new JButton(HGimage);
+        hb2.setBounds(575,150,400,660);
+        hb2.addActionListener(this);
+        hb3=new JButton(Failimage);
+        hb3.setBounds(1100,150,400,660);
+        hb3.addActionListener(this);
+
+        hf.add(hb1);
+        hf.add(hb2);
+        hf.add(hb3);
+
+
+        //timing frame
+        f.setSize(700,700);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        f.setTitle("TIMING");
+        f.setIconImage(image.getImage());
+        f.getContentPane().setBackground(new Color(248, 143, 143));
+
+        l1=new JLabel("TIGER 3-HINDI");
+        l1.setBounds(10,30,250,30);
+        l1.setFont(font1);
+
+        Citylist.setBounds(30,80,120,30);
+
+        l3=new JLabel("Select Cinema for the show");
+        l3.setFont(font2);
+        l3.setBounds(10,125,250,50);
+        r1=new JRadioButton("X Cinema");
+        r1.setBackground(new Color(248, 143, 143));
+        r1.setBounds(10,170,120,50);
+        r1.addActionListener(this);
+        r2=new JRadioButton("Y Cinema");
+        r2.setBackground(new Color(248, 143, 143));
+        r2.setBounds(127,170,120,50);
+        r2.addActionListener(this);
+        r3=new JRadioButton("Z Cinema");
+        r3.setBackground(new Color(248, 143, 143));
+        r3.setBounds(243,170,120,50);
+        r3.addActionListener(this);
+        g=new ButtonGroup();
+        g.add(r1);
+        g.add(r2);
+        g.add(r3);
+
+        l2=new JLabel("Select Day for the Show");
+        l2.setBounds(10,235,190,50);
+        l2.setFont(font2);
+        b1=new JButton("Today");
+        b1.setBounds(10,280,70,30);
+        b1.addActionListener(this);
+        b2=new JButton("Tomorrow");
+        b2.setBounds(90,280,100,30);
+        b2.addActionListener(this);
+        b3=new JButton("Day After Tomorrow");
+        b3.setBounds(200,280,160,30);
+        b3.addActionListener(this);
+
+        l4=new JLabel("Select Timing for the Show");
+        l4.setBounds(10,345,210,50);
+        l4.setFont(font2);
+        b4=new JButton("11:00 AM");
+        b4.setBounds(10,390,100,30);
+        b5=new JButton("3:00 PM");
+        b5.setBounds(130,390,100,30);
+        b6=new JButton("7:00 PM");
+        b6.setBounds(10,430,100,30);
+        b7=new JButton("10:30 PM");
+        b7.setBounds(130,430,100,30);
+
+        f.add(l1);
+        f.add(r1);
+        f.add(r2);
+        f.add(r3);
+        f.add(Citylist);
+        f.add(l3);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==hb1)
+        {
+            f.setVisible(true);
+
+        }
+        else if (e.getSource()==hb2)
+        {
+            f.setVisible(true);
+            l1.setText("12TH FAIL-HINDI");
+        }
+        else if (e.getSource()==hb3)
+        {
+            f.setVisible(true);
+            l1.setText("THE HUNGER GAMES-ENGLISH");
+        }
+        else if (e.getSource()==b1)
+        {
+            b1.setBackground(Color.gray);
+            b2.setBackground(UIManager.getColor("Button.background"));
+            b3.setBackground(UIManager.getColor("Button.background"));
+            f.add(l4);
+            f.add(b4);
+            f.add(b5);
+            f.add(b6);
+            f.add(b7);
+        }
+        else if (e.getSource()==b2)
+        {
+            b2.setBackground(Color.gray);
+            b1.setBackground(UIManager.getColor("Button.background"));
+            b3.setBackground(UIManager.getColor("Button.background"));
+            f.add(l4);
+            f.add(b4);
+            f.add(b5);
+            f.add(b6);
+            f.add(b7);
+        }
+        else if(e.getSource()==b3)
+        {
+            b3.setBackground(Color.gray);
+            b1.setBackground(UIManager.getColor("Button.background"));
+            b2.setBackground(UIManager.getColor("Button.background"));
+            f.add(l4);
+            f.add(b4);
+            f.add(b5);
+            f.add(b6);
+            f.add(b7);
+        }
+        else if (e.getSource()==r1||e.getSource()==r2||e.getSource()==r3)
+        {
+            f.add(l2);
+            f.add(b1);
+            f.add(b2);
+            f.add(b3);
+        }
+    }
+
+    public static void main(String[] args) {
+        hlo a=new hlo();
+        a.q();
+    }
+}
