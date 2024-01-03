@@ -21,3 +21,20 @@ header {
     border-bottom-right-radius: 20px;
 
   }
+  .Project-odd {
+    background-color: #d3d3d3;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .Project-even {
+    background-color: #b9b9b9;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 20%;
+    height: 10%;
+    margin: 0 auto;
+}
