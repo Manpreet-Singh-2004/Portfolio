@@ -257,6 +257,26 @@ header{
       object-fit: contain;
     }
   }
+/* Download button */
+
+#Roadschool-apk-download-button{
+    padding: 10px;
+    background-color: grey;
+    /* border-color: 1px solid black; */
+}
+#Roadschool-apk-download-button {
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 5px; 
+    display: block;
+}
+
+#Roadschool-apk-download-button:hover {
+    transition: 1s;
+    background-color: black;
+    color: lightblue;
+}
+
 /* -----------Caro-END---------------------- */
 
 footer{
@@ -278,10 +298,7 @@ footer{
     background-color:#D3D3D3;
     transition-duration: 1s;    
 }
-/* .fa-instagram{
-    transition-duration: 1s;
-    background-color:#D3D3D3; */
-/* } */
+
 .fa-instagram:hover{
     transition-duration: 1s;
     background: #f09433; 
