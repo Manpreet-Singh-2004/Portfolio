@@ -21,6 +21,31 @@ header {
     border-bottom-right-radius: 20px;
 
   }
+  .nav {
+    display: flex;
+    justify-content: center; /* Center the navigation bar */
+    align-items: center;
+    /* ---------- */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav li {
+    list-style-type: none;
+}
+
+.nav li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav li p {
+    margin: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: whitesmoke;
+}
   .Project-odd {
     background-color: #00246B; 
     color: #CADCFC; 
