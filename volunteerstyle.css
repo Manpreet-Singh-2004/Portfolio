@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+:root
+{
+    --font-style: 'Nunito Sans', sans-serif;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(/Volunteer/VolunteerBackground\ \(1\).jpg) no-repeat center center/cover;
+    padding: 50px 0;
+    text-align: center;
+    color: whitesmoke;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+  }
+  .nav {
+    display: flex;
+    justify-content: center; /* Center the navigation bar */
+    align-items: center;
+    /* ---------- */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav li {
+    list-style-type: none;
+}
+
+.nav li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav li p {
+    margin: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* Images */
+img {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 920px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+/* img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+@media all and (max-width: 720px) {
+    img {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    img img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+#download-button {
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: grey;
+    padding: 5px; 
+    display: block;
+}
+
+#download-button:hover {
+    transition: 1s;
+    background-color: black;
+    color: lightblue;
+}
+
+/* Footer */
+footer{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.fa{
+    color: black;
+    padding: 20px;
+    font-size: 50px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background-color:#D3D3D3;
+    transition-duration: 1s;    
+}
+
+.fa-instagram:hover{
+    transition-duration: 1s;
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );    
+    /* insta background */
+    color: #D3D3D3;
+    border-radius: 15px;
+}
+.fa-linkedin:hover{
+    background-color: #0072b1;
+    color: #D3D3D3;
+    border-radius: 15px;
+}
+.fa-github:hover{
+    background-color: white;
+    border-radius: 15px;
+}
