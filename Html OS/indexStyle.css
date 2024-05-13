@@ -1,0 +1,173 @@
+html {
+    background-image: url('/images/background.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100%; /* Ensure HTML element takes up the full height of the viewport */
+}
+
+button {
+    background-color: transparent; /* Set background color to transparent */
+    border: none; /* Remove border */
+    color: inherit; /* Use default text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: inherit; /* Use default font size */
+}
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly whiteish background color */
+}
+
+
+
+.Window_Key_Press {
+    background-color: black;
+    width: 450px;
+    height: 400px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left side */
+    color: white;
+    display: none;
+}
+
+.key-item {
+    display: flex;
+    flex-direction: row; /* Stack items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Add some space between each item */
+}
+
+.Window_Key_icons {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.Win_figcaption {
+    margin-left: 10px; /* Add space between image and caption */
+}
+
+
+
+
+.My_Computer_instance {
+    display: none;
+    background-color: #242820;
+    width: 800px;
+    height: 600px;
+    position: fixed; /* Position the div relative to the viewport */
+    top: 50%; /* Align the top of the div to the vertical center of the viewport */
+    left: 50%; /* Align the left side of the div to the horizontal center of the viewport */
+    transform: translate(-50%, -50%); /* Move the div back by half of its own width and height */
+}
+.My_Computer_instance-top{
+    color: white;
+}
+
+.My_Computer_instance-Main {
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* padding: 50px; */
+}
+
+.My_Computer_instance-Main_Disk {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+
+/* Disk D */
+.Disk_D{
+    display: none;
+    background-color: #242820;
+    width: 800px;
+    height: 600px;
+    position: fixed; /* Position the div relative to the viewport */
+    top: 50%; /* Align the top of the div to the vertical center of the viewport */
+    left: 50%; /* Align the left side of the div to the horizontal center of the viewport */
+    transform: translate(-50%, -50%); /* Move the div back by half of its own width and height */
+}
+
+
+
+
+
+
+
+
+
+
+.horizontal-div_Container{
+    text-align: center; /* Aligns content center horizontally */
+}
+
+
+figcaption{
+    color: white;
+    font-size: 14px;
+}
+
+.horizontal-div {
+    padding-bottom: 45px; /* Adjust the value to be greater than the taskbar height */
+    display: inline-block; /* Ensure items are centered within the horizontal-div */
+    text-align: left; /* Reset text alignment for inner content */
+}
+
+.taskbar {
+    position: fixed; /* Fix the taskbar in place */
+    bottom: 0; /* Position it at the bottom of the viewport */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the entire width of the viewport */
+    background-color: #000000; /* Example background color */
+    padding: 10px; /* Add some padding for better appearance */
+    height: 35px;
+    color: white;
+    font-size: 14px;
+}
+.Image_Taskbar_icons{
+    width: 32px;
+    height: 32px;
+    padding-bottom: 0%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.Image_Desktop_icons{
+    width: 48px;
+    height: 48px;
+}
+#Taskbar_Search_Bar{
+    height: 25px;
+    background-color: white;
+}
+.Image_Taskbar_Utilities {
+    width: 26px;
+    height: 26px;
+    padding-bottom: 0%;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+    /* margin-right: 100px; */
+}
+#currentDate{
+    width: 26px;
+    height: 26px;
+    padding-bottom: 0%;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+    margin-right: 40px;
+}
+
+iframe {
+    /* display: none; */
+    width: 1000px;
+    height: 750px;
+    position: fixed; /* Position the iframe relative to the viewport */
+    top: 50%; /* Align the top of the iframe to the vertical center of the viewport */
+    left: 50%; /* Align the left side of the iframe to the horizontal center of the viewport */
+    transform: translate(-50%, -50%); /* Move the iframe back by half of its own width and height */
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="indexStyle.css">
+<body>
+    
+    <div class="horizontal-div">
+        <div class="horizontal-div_Container">
+            <button onclick="My_Computer_instance()">
+                <img src="/images/My_Computer.png" alt="" class="Image_Desktop_icons">
+                <figcaption>My Computer</figcaption>
+            </button>
+        </div>
+        <br> <br>
+        <div class="horizontal-div_Container">
+            <img src="/images/File_Explorer.png" alt="" class="Image_Desktop_icons">
+            <figcaption>File Explorer</figcaption>
+        </div>
+        <br> <br>
+        <div class="horizontal-div_Container">
+            <img src="/images/Recycling_bin.png" alt="" class="Image_Desktop_icons">
+            <figcaption>Recycling bin</figcaption>
+        </div>
+    </div>
+
+    <div class="Window_Key_Press" id="Window_Key_Press">
+        <div class="key-item">
+            <img src="/images/Controll Pannel.png" alt="" class="Window_Key_icons"> 
+            <figcaption class="Win_figcaption">Controll Pannel</figcaption>
+        </div>
+        <div class="key-item">
+            <img src="/images/Notepad.png" alt="" class="Window_Key_icons">
+            <figcaption class="Win_figcaption">Notepad</figcaption>
+        </div>
+        <div class="key-item">
+            <img src="/images/Command_Prompt.png" alt="" class="Window_Key_icons">
+            <figcaption class="Win_figcaption">Command Prompt</figcaption>
+        </div>
+        <div class="key-item">
+            <img src="/images/Root_Shell.jpg" alt="" class="Window_Key_icons">
+            <figcaption class="Win_figcaption">Root Shell</figcaption>
+        </div>
+
+    </div>
+    
+    
+
+
+    
+    <div id="My_Computer_instance" class="My_Computer_instance">
+
+        <div class="My_Computer_instance-top">
+            <h3>🖥️ > This Computer</h3>
+        
+
+            <!-- Maximise -->
+            <button onclick="Maximise_My_Computer_Instance()">
+                <img src="/images/Maximise.png" alt="" class="Image_Taskbar_icons">
+            </button>
+            <!-- Close -->
+            <button onclick="Close_My_Computer_Instance()">
+                <img src="/images/Close.png" alt="" class="Image_Taskbar_icons">
+            </button>
+
+    </div>
+
+        <br>
+        <div class="My_Computer_instance-Main">
+                <div class="My_Computer_instance-Main_Disk">
+                    <button>
+                        <img src="/images/Data_Storage.png" alt="" class="Image_Desktop_icons">
+                        <figcaption>Local Disk C:</figcaption>
+                        <progress id="file" value="60" max="100"> 32% </progress>
+                    </button>
+                </div>
+                <div class="My_Computer_instance-Main_Disk">
+                    <button onclick="Disk_D()">
+                        <img src="/images/Data_Storage.png" alt="" class="Image_Desktop_icons">
+                        <figcaption>Local Disk D:</figcaption>
+                        <progress id="file" value="32" max="100"> 32% </progress>
+                    </button>
+                </div>
+        </div>
+
+        <div class="Disk_D" id="Disk_D">
+            <button onclick="Back_D()">
+                <img src="/images/Go_Back.png" alt="" class="Image_Taskbar_icons">
+            </button>
+            <div class="key-item">
+                <button>
+                    <img src="/images/Folder.png" alt="" class="Window_Key_icons">
+                    <figcaption class="Win_figcaption">About Me</figcaption>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+<div>
+    <button onclick="Close_Chrome()">
+        <img src="images/Close.png" alt="Close Chrome" class="Image_Taskbar_icons" id="Closebtn" style="display: none;">
+    </button>
+    <button onclick="Open_My_Website()">
+        <img src="images/Profile.png" alt="" class="Image_Taskbar_icons" id="My_website" style="display: none;">
+    </button>
+    <div id="browserContainer" style="display: none;">
+        <iframe id="embeddedBrowser" src=""></iframe>
+    </div>
+</div>
+
+
+    <div class="taskbar" id="taskbar">
+        <button onclick="Window_Key_Press()">
+        <img src="/images/Windows_icon_logo.png" alt="" class="Image_Taskbar_icons">
+        </button>
+        <input type="text" placeholder="🔎 Type here to search" id="Taskbar_Search_Bar">
+        <img src="/images/File_Explorer.png" alt="" class="Image_Taskbar_icons">
+        <img src="/images/Microsoft_Store.png" alt="" class="Image_Taskbar_icons">
+        <button onclick="toggleBrowser()">
+            <img src="/images/Chrome.png" alt="" class="Image_Taskbar_icons">
+        </button>
+        <button onclick="sendEmail()">
+            <img src="/images/Mail.png" alt="" class="Image_Taskbar_icons">
+        </button>
+
+        <img src="/images/Do_Not_Disturbe.png" alt="" class="Image_Taskbar_Utilities">
+
+        <span id="currentDate"></span>
+
+        <img src="/images/Battery.png" alt="" class="Image_Taskbar_Utilities">
+        <img src="/images/Volume.png" alt="" class="Image_Taskbar_Utilities">
+        <img src="/images/Wifi.png" alt="" class="Image_Taskbar_Utilities">
+
+
+    </div>
+
+    <div class="Windows_Key_Press">
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
