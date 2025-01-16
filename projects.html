@@ -16,20 +16,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1 style="text-align: center;" >Projects</h1><br>
-        <div class="nav">
-            <a href="index.html">Home</a>
-            <p> | </p>
-            <a href="mailto: manpreet.singh18@student.ufv.ca" style="text-decoration: none; color: whitesmoke;">Mail me</a>
-            <p> | </p>
-            <a href="https://www.linkedin.com/in/manpreetsingh18-ufv/" style="text-decoration: none; color: whitesmoke;">Linkedin</a>
-            <p> | </p>
-            <a href="Manpreet Singh Resume.pdf" style="text-decoration: none; color: whitesmoke;" download="Manpreet Singh Resume">Resume</a>
-            <p> | </p>
-            <a href="volunteer.html">Volunteer</a>
-        </div>
-        </header>
+    <div class="starry-background">
+        <div class="background-overlay"></div>
+        <header>
+            <h1 style="text-align: center;" >Projects</h1><br>
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <p> | </p>
+                <a href="mailto: manpreet.singh18@student.ufv.ca" style="text-decoration: none; color: whitesmoke;">Mail me</a>
+                <p> | </p>
+                <a href="https://www.linkedin.com/in/manpreetsingh18-ufv/" style="text-decoration: none; color: whitesmoke;">Linkedin</a>
+                <p> | </p>
+                <a href="Manpreet Singh Resume.pdf" style="text-decoration: none; color: whitesmoke;" download="Manpreet Singh Resume">Resume</a>
+                <p> | </p>
+                <a href="volunteer.html">Volunteer</a>
+            </div>
+            </header>
+    </div>
         <br>
         
         <div class="headlink">
@@ -41,29 +44,130 @@
         </p>
 
         <br>
-        <div class="Project-odd">
-        <div class="Project-Details_Title">
-        <b>Software Training Plan</b>
-        </div>
-        <div class="Project-Details">
-            <br>
-            <div class="Project-Details_Text">
-            For CIS 285 our Professor Anoop Saxena had us make a Software Training Plan, in which we have to make a plan to teach
-            our target audience. <br>
-            For this project, I took my target audience to be Starbucks Employees and the target software to be Microsoft Teams.
-            <a href="/Projects/Software Training Plan.pdf" class="Project_Links"> Click here! </a> to view the file.
-            </div>
-
-        <div class="Project-Details_Image">
-            <a href="/Projects/Software Training Plan.pdf"><img src="Projects/Software-Training-Plan.png" alt="Software-Training-Plan" style="height: auto; width: 300px; border-radius: 15px;"> </a>
-        </div>
-        </div>
-    </div>
-        <br>
-        <br>
-
 
         <div class="Project-even">
+            <div class="Project-Details_Title">
+                <b>Ball Destroy Game</b>
+            </div>
+            <div class="Project-Details">
+                <br>
+                <div class="Project-Details_Text">
+                    <p>Ball Escape is an exciting maze game where your goal is to escape through a blue portal while avoiding robot claws. These claws will throw you back to your starting position if they catch you, adding a layer of challenge to your escape!. This game is made on godot gaming engine</p>
+                    <a href="https://manpreet-singh-2004.itch.io/ball-destroy" class="Project_Links"> Click here! </a> to download the game on itch io
+                    <br>
+                    <a href="https://github.com/Sahib17/Assignment-4---COMP-360" class="Project_Links"> Click here</a> to check the source code.
+                </div>
+
+            <div class="Project-Details_Image">
+                <a href="https://manpreet-singh-2004.itch.io/ball-destroy"><video src="godot/assignment4/Game.mp4" alt="Godot-Game" controls = "autoplay" style="height: auto; width: 400px; border-radius: 15px;"> </a>
+            </div>
+        
+        </div>
+        </div>
+
+        <br>
+        <br>
+
+<!-- ------------------------------------------------ -->
+        <div class="Project-odd">
+            <div class="Project-Details_Title">
+                <b>Pendulem motion and physics</b>
+            </div>
+            <div class="Project-Details">
+                <br>
+                <div class="Project-Details_Text">
+                    <p>This project is a simulation of a double pendulum system in 3D, implemented using GDScript in the Godot game engine. The primary objective is to programmatically showcase hierarchical object movement using simplified physics principles, specifically the chaotic and dynamic motion of a double pendulum under gravitational influence with damping.</p>
+                    <a href="https://manpreet-singh-2004.itch.io/godot-projects" class="Project_Links"> Click here! </a> to download the game on itch io
+                    <br>
+                    <a href="https://github.com/Manpreet-Singh-2004/Assignment-3_Godot" class="Project_Links"> Click here</a> to check the source code.
+                </div>
+
+            <div class="Project-Details_Image">
+                <a href="https://manpreet-singh-2004.itch.io/godot-projects"><video src="godot/assignment3/physics.mp4" controls = "autoplay" alt="Godot-landscape" style="height: auto; width: 400px; border-radius: 15px;"> </a>
+            </div>
+        
+        </div>
+        </div>
+
+        <br>
+        <br>
+
+<!--  -------------------------------------------------------- -->
+
+<div class="Project-even">
+    <div class="Project-Details_Title">
+        <b>Plane movement with landscape</b>
+    </div>
+    <div class="Project-Details">
+        <br>
+        <div class="Project-Details_Text">
+            <p>In the plane simulation built with the Godot Engine, the glider follows a predefined red spline path using a Path3D with a PathFollow3D node to control its position and orientation smoothly. A Camera3D, either parented or attached via a spring arm, dynamically adjusts its angle to track the glider's movement.
+                <br>
+                The rain effect is achieved with a Particles3D node, using a process material to fine-tune properties like gravity, lifetime, and emission shape for realistic rainfall. Optional collision handling adds further realism to the particle interactions with the environment.</p>
+            <a href="https://manpreet-singh-2004.itch.io/godot-projects" class="Project_Links"> Click here! </a> to download the game on itch io
+            <br>
+            <a href="https://github.com/Manpreet-Singh-2004/Assignment-3_Godot" class="Project_Links"> Click here</a> to check the source code.
+        </div>
+
+    <div class="Project-Details_Image">
+        <a href="https://manpreet-singh-2004.itch.io/godot-projects"><video src="godot/assignment2/flying.mp4" controls = "autoplay" alt="Godot-landscape" style="height: auto; width: 400px; border-radius: 15px;"> </a>
+    </div>
+
+</div>
+</div>
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------- -->
+        <div class="Project-odd">
+            <div class="Project-Details_Title">
+                <b>Landscape generation through godot</b>
+            </div>
+            <div class="Project-Details">
+                <br>
+                <div class="Project-Details_Text">
+                    <p>Using the Godot Engine, I created a procedurally generated landscape with the FastNoise module. By adjusting noise parameters like frequency, lacunarity, and octaves, I achieved a balance between smooth shapes and detailed variations, resulting in a realistic and visually appealing terrain.</p>
+                    <a href="https://manpreet-singh-2004.itch.io/godot-projects" class="Project_Links"> Click here! </a> to download the game on itch io
+                    <br>
+                    <a href="https://github.com/ShreyasDutt/Godot_Assignment-1" class="Project_Links"> Click here</a> to check the source code.
+                </div>
+
+            <div class="Project-Details_Image">
+                <a href="https://manpreet-singh-2004.itch.io/godot-projects"><img src="godot/assignment1/landscape.png" alt="Godot-landscape" style="height: auto; width: 300px; border-radius: 15px;"> </a>
+            </div>
+        
+        </div>
+        </div>
+
+        <br>
+        <br>
+<!-- ------------------------------------------------------------------------------ -->
+
+        <div class="Project-even">
+            <div class="Project-Details_Title">
+                <b>Software Training Plan</b>
+            </div>
+            <div class="Project-Details">
+                <br>
+                <div class="Project-Details_Text">
+                    For CIS 285 our Professor Anoop Saxena had us make a Software Training Plan, in which we have to make a plan to teach
+                    our target audience. <br>
+                    For this project, I took my target audience to be Starbucks Employees and the target software to be Microsoft Teams.
+                    <a href="/Projects/Software Training Plan.pdf" class="Project_Links"> Click here! </a> to view the file.
+                </div>
+
+            <div class="Project-Details_Image">
+                <a href="/Projects/Software Training Plan.pdf"><img src="Projects/Software-Training-Plan.png" alt="Software-Training-Plan" style="height: auto; width: 300px; border-radius: 15px;"> </a>
+            </div>
+        
+        </div>
+        </div>
+        <br>
+        <br>
+
+
+        <div class="Project-odd">
 
             <div class="Project-Details_Title">
                 <b>Online Raspberry Pi SSH</b>
@@ -87,7 +191,7 @@
         <br>
         <br>
 
-        <div class="Project-odd">
+        <div class="Project-even">
             <div class="Project-Details_Title">
                 <b>Local File Transfer Server</b>
             </div>
@@ -118,7 +222,7 @@
     <br>
     <br>
 
-    <div class="Project-even">
+    <div class="Project-odd">
 
         <div class="Project-Details_Title">
             <b>File Manager</b>

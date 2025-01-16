@@ -30,6 +30,27 @@ h3{
     padding: 5px;
 }
 
+.note-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.note-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #333;
+}
+
+.note-text {
+    color: #666;
+    font-style: italic;
+    white-space: nowrap;
+    padding: 0 10px;
+}
 
 /* Images */
         
