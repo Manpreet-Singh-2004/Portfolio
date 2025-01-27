@@ -280,19 +280,19 @@ header{
   }
 /* Download button */
 
-#Roadschool-apk-download-button{
+#Button-main{
     padding: 10px;
     background-color: grey;
     /* border-color: 1px solid black; */
 }
-#Roadschool-apk-download-button {
+#Button-main {
     text-decoration: none;
     color: whitesmoke;
     padding: 5px; 
     display: block;
 }
 
-#Roadschool-apk-download-button:hover {
+#Button-main:hover {
     transition: 1s;
     background-color: black;
     color: lightblue;
