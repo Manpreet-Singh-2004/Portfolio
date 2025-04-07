@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLSL Shader in HTML</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas for rendering the shader -->
+  <canvas id="glCanvas"></canvas>
+
+  <!-- Vertex Shader -->
+  <script id="vertexShader" type="x-shader/x-vertex">
+    attribute vec4 a_position;
+    void main() {
+      gl_Position = a_position;
+    }
+  </script>
+
+  <!-- Fragment Shader -->
+  <script id="fragmentShader" type="x-shader/x-fragment">
+    precision mediump float;
+
+    uniform vec2 iResolution;
+    uniform float iTime;
+
+    void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+      vec4 _TopColor = vec4(0.0, 0.0, 0.0, 1.0);    // Black
+      vec4 _BottomColor = vec4(0.0, 0.0, 0.0, 1.0); // Black
+
+      vec2 uv = fragCoord / iResolution.xy;
+
+      float _Frequency = 4.29;
+      float _OuterWavesAmplitude = 0.5;
+      float _InnerWavesAmplitude = 0.18;
+      float _OuterWavesSpeed = 0.044;
+      float _InnerWavesSpeed = 0.064;
+      float _OuterWave1Falloff = 2.0;
+      float _OuterWave2Falloff = 2.0;
+      float _InnerWave1Falloff = 1.0;
+      float _InnerWave2Falloff = 1.0;
+
+      vec3 redHighlight = vec3(1.0, 0.0, 0.0); // Pure red
+
+      float topOuterWave = sin((uv.x + (iTime * (_OuterWavesSpeed + (0.0025 * 1.0)))) * _Frequency) * _OuterWavesAmplitude;
+      float bottomOuterWave = sin((uv.x + (iTime * (_OuterWavesSpeed + (0.0025 * 20.0)))) * _Frequency) * _OuterWavesAmplitude;
+      float topInnerWave = sin((uv.x + (iTime * (_InnerWavesSpeed + (0.0025 * 8.0)))) * _Frequency) * _InnerWavesAmplitude;
+      float bottomInnerWave = sin((uv.x + (iTime * (_InnerWavesSpeed + (0.0025 * 40.0)))) * _Frequency) * _InnerWavesAmplitude;
+
+      float topOuterWaveFalloff = topOuterWave;
+      float bottomOuterWaveFalloff = bottomOuterWave;
+      float topInnerWaveFalloff = topInnerWave;
+      float bottomInnerWaveFalloff = bottomInnerWave;
+
+      topOuterWave += 1.0 - (1.0 - uv.y) * 6.0;
+      bottomOuterWave += 1.0 - (uv.y * 6.0);
+      topInnerWave += 1.0 - (uv.y) * 2.5;
+      bottomInnerWave += 1.0 - (1.0 - uv.y) * 2.5;
+
+      topOuterWaveFalloff += 1.0 - (1.0 - uv.y - 0.2) * 6.0;
+      bottomOuterWaveFalloff += 1.0 - ((uv.y - 0.2) * 6.0);
+      topInnerWaveFalloff += 1.0 - ((uv.y - 0.1) * 2.2);
+      bottomInnerWaveFalloff += 1.0 - (((1.0 - uv.y - 0.1)) * 2.2);
+
+      float wave1 = 1.0 - smoothstep(0.0, 0.025, topOuterWave);
+      float wave2 = 1.0 - smoothstep(0.0, 0.025, bottomOuterWave);
+      float wave3 = 1.0 - smoothstep(0.0, 0.025, topInnerWave);
+      float wave4 = 1.0 - smoothstep(0.0, 0.025, bottomInnerWave);
+
+      float wave1Falloff = 1.0 - smoothstep(0.0, _OuterWave1Falloff, topOuterWaveFalloff);
+      float wave2Falloff = 1.0 - smoothstep(0.0, _OuterWave2Falloff, bottomOuterWaveFalloff);
+      float wave3Falloff = 1.0 - smoothstep(0.0, _InnerWave1Falloff, topInnerWaveFalloff);
+      float wave4Falloff = 1.0 - smoothstep(0.0, _InnerWave2Falloff, bottomInnerWaveFalloff);
+
+      wave1 -= wave1Falloff;
+      wave2 -= wave2Falloff;
+      wave3 -= wave3Falloff;
+      wave4 -= wave4Falloff;
+
+      wave1 = clamp(wave1, 0.0, 1.0);
+      wave2 = clamp(wave2, 0.0, 1.0);
+      wave3 = clamp(wave3, 0.0, 1.0);
+      wave4 = clamp(wave4, 0.0, 1.0);
+
+      float wave = wave1 + wave2 + wave3 + wave4;
+      vec4 waveContribution = vec4(redHighlight, wave);
+      vec4 background = vec4(mix(_BottomColor.rgb, _TopColor.rgb, uv.y), 1.0);
+
+      fragColor = mix(background, waveContribution, wave);
+    }
+
+    void main() {
+      mainImage(gl_FragColor, gl_FragCoord.xy);
+    }
+  </script>
+
+  <!-- JavaScript for WebGL Initialization -->
+  <script src="script.js"></script>
+</body>
+</html>
